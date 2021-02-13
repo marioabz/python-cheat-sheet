@@ -8,6 +8,8 @@ celsius_degrees = -51
 topics = int("941")
 height = float(1.75)
 half_circle_degrees = complex("0-1i")
+positive_infinite = float("inf")
+negative_infinite = float("-inf")
 
 # Type Conversion
 # In addition and substraction integers are coerced to floats and
@@ -20,10 +22,10 @@ print(a) # -> 200.0
 # The library 'Decimal' could help here
 # 'decimal' allows more precise control of decimals, critical
 # in some applications
+import decimal
+
 a = 1.1 + 2.2
 print(a) # -> 3.3000000000000003
-
-import decimal
 print(decimal.Decimal("1.1") + decimal.Decimal("2.2")) # -> 3.3
 
 
