@@ -36,5 +36,3 @@ name, _, surname = "Mario-Briseño".partition("-")
 
 noisy_name = "12aMario Briseño00"
 clean_name = noisy_name.strip("12a0")
-
-
