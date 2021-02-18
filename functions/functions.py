@@ -13,6 +13,10 @@ def print_message_with_delimeters(message: str, delimeter: str):
     print(delimeter*len(message))
 
 
+def print_delimeter():
+    print("-" * 25)
+
+
 # Function that returns a list
 def get_week_days() -> list:
     return [
@@ -28,10 +32,17 @@ def get_week_days() -> list:
 
 # Default values are allowed in arguments. Do not use collectibles as
 # default values. They are instantiated once and every call of this 
-# function does not allocate a new object in the default value
+# function does not allocate a new object in the default value. Instead
+# use inmutable types as default arguments (str, int, tuple).
 def add_five_to_number(number=0) -> int:
     number += 5
     return number
+
+# Do not do this.           |
+#                           V    
+def get_initialized_list(arg=[]):
+    arg.append(5)
+    print(arg)
 
 
 def modify_global_variable():
@@ -41,7 +52,6 @@ def modify_global_variable():
 # Decorators
 # Decorators take a function as an argument and modifies it in order to 
 # add 'functiontalities'
-
 def function_modifier(func: Callable) -> Callable:
     def wrapper(arg):
         if len(arg) > 3:
@@ -57,7 +67,7 @@ def check_g7_countries(country: str) -> bool:
     countries = ("USA", "DE", "UK", "FR", "JP", "CA", "IL")
     return country in countries
 
-
+print_delimeter()
 weekdays1 = get_week_days()
 z = 8
 a = add_five_to_number(z)
@@ -67,9 +77,17 @@ print(a is b, a == b) # -> True, True
 # Even though local variable is named the same as a varaible out 
 # of the function scope the functions doesn't change the value
 # of the local variable 'number'
+print_delimeter()
 number = 10
 modify_global_variable() # local 'number' = 5
 print(number == 10) # -> True
 
+print_delimeter()
 print("Is the USA a member of G7? : ", check_g7_countries("USA"))
 print("Is Mexico a member of G7? : ", check_g7_countries("MX"))
+
+print_delimeter()
+print("Not the behaviour one would expect, unless you don't know Python")
+get_initialized_list()
+get_initialized_list()
+get_initialized_list()
