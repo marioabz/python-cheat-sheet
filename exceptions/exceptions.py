@@ -1,4 +1,6 @@
 
+import sys
+
 # Exception handling is a mechanism for stopping 'normal' program flow
 # and continue with surrounding context or other code block.
 
@@ -27,7 +29,16 @@ try:
 except UnicodeEncodeError as e:
     print(e)
 
-# There is whole list about all available exceptions as builltin in Python
+
+try:
+    print(9[1])
+    print({"a": 1} + 52)
+    print([1, 2, 3][3])
+except (KeyError, TypeError, IndexError) as e:
+    print(e)
+
+
+# There is whole list about all available exceptions as builltins in Python
 # An example of them are: Concrete exceptions, OS exceptions, Warnings,
 # System Exit, KeyboardInterrupt, GeneratorExit.
 
@@ -63,3 +74,51 @@ try:
     print(len(binary_set)/divisor)
 except NotDivisibleByOddNumbers as e:
     print("You can only divide binary set with an even number")
+
+# Re rasing exceptions is accepted when unpythonic error make their
+# way to one's code.
+
+# One should avoid making the beginner's mistake of having multiple
+# tight scopes for multiple callings of the same function.
+# One try-catch block should work perfectly fine.
+
+try:
+    int(b"5")
+    int(6)
+    int("8.8")
+except ValueError as e:
+    print("ValueError: Strings representing floats cannot\
+    be converted to Integers.", file=sys.stderr)
+
+# Do not guard Against Type Error
+# It's usually not worth checking types. This can limit functions 
+# unnecessarily.
+
+# Look Before You Leap Vs. It's Easier to Ask for Forgiveness than
+# Permission.
+# LBYL vs EAFP
+
+# Local vs. Non-local handling
+# Error codes require interspersed, local handling.
+# Exceptions allow centralized, non-local handling.
+
+# Code clean up
+# The 'finally' block of a try-except block allows to excetute
+# a block of code wether an exception ocurred or not.
+
+# Transform a list into a string 
+
+list_to_convert = ["1", "2", "3", "5", (8)]
+try:
+    strin = ''.join(list_to_convert)
+except TypeError as e:
+    print(f"Somethin went wrong. Error: {e}")
+finally:
+    list_to_convert.pop()
+
+try:
+    strin = ''.join(list_to_convert)
+except TypeError as e:
+    print(f"Somethin went wrong. Error: {e}")
+finally:
+    list_to_convert.pop()
