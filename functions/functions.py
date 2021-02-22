@@ -30,7 +30,7 @@ def get_week_days() -> list:
     ]
 
 
-# Default values are allowed in arguments. Do not use collectibles as
+# Default values are allowed in arguments. Do not use collections as
 # default values. They are instantiated once and every call of this 
 # function does not allocate a new object in the default value. Instead
 # use inmutable types as default arguments (str, int, tuple).
