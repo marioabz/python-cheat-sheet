@@ -49,6 +49,7 @@ class India():
     def get_population(self) -> int:
         return int(1.366*10e8)
 
+
 # Function 'print_country_population' doesn't care about the instance type.
 def print_country_population(instance):
     print(instance.get_population())
