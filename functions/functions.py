@@ -67,6 +67,23 @@ def check_g7_countries(country: str) -> bool:
     countries = ("USA", "DE", "UK", "FR", "JP", "CA", "IL")
     return country in countries
 
+# Single asterisk before a variable allows the function to capture
+# any number of unnamed arguments as a tuple.
+def add_one_to_variable_number_of_arguments(*args):
+    return [arg + 1 for arg in args]
+
+
+# Double asterisks before a variable allows a function to take
+# any number of named variables as a dictionary.
+def check_config(**kwargs):
+    try:
+        print(f"Port is: {kwargs['port']}")
+        print(f"API status is: {kwargs['status']}")
+        print(f"API rate limit is: {kwargs['rate_limit']} r/s")
+    except KeyError:
+        print("You are lacking one config parameter.")
+
+
 print_delimeter()
 weekdays1 = get_week_days()
 z = 8
@@ -91,3 +108,9 @@ print("Not the behaviour one would expect, unless you don't know Python")
 get_initialized_list()
 get_initialized_list()
 get_initialized_list()
+
+print(add_one_to_variable_number_of_arguments(-1))
+print(add_one_to_variable_number_of_arguments(9, 9, 9))
+print(add_one_to_variable_number_of_arguments(5, 9, 6, 1, 0))
+
+check_config(port=8000, status="alive", rate_limit=500)
