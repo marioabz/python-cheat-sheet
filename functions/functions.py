@@ -84,6 +84,10 @@ def check_config(**kwargs):
         print("You are lacking one config parameter.")
 
 
+def get_common_names(*args, **kwargs):
+    return [arg for arg in args] + [kwarg for kwarg in kwargs.values()]
+
+
 print_delimeter()
 weekdays1 = get_week_days()
 z = 8
@@ -114,3 +118,7 @@ print(add_one_to_variable_number_of_arguments(9, 9, 9))
 print(add_one_to_variable_number_of_arguments(5, 9, 6, 1, 0))
 
 check_config(port=8000, status="alive", rate_limit=500)
+
+print(get_common_names("fabian", "isaac", "hugo", 
+first_person="mario", second_person="yoel"))
+print(get_common_names("chuy", first_person="mario", second_person="yoel"))
