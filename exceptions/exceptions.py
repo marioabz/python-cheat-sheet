@@ -107,21 +107,19 @@ except ValueError as e:
 # a block of code wether an exception ocurred or not.
 
 # Transform a list into a string 
-
 list_to_convert = ["1", "2", "3", "5", (8)]
 try:
     strin = ''.join(list_to_convert)
 except TypeError as e:
-    print(f"Something went wrong. Error: {e}")
-finally:
     list_to_convert.pop()
+    print(f"Something went wrong. Error: {e}")
 
 try:
     strin = ''.join(list_to_convert)
 except TypeError as e:
     print(f"Something went wrong. Error: {e}")
 finally:
-    list_to_convert.pop()
+    print("Joining of list was succesful.")
 
 # Errors should never pass silently, unless explicity silenced.
 # A function's exceptions form part of its API, they should be 
