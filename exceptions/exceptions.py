@@ -112,13 +112,18 @@ list_to_convert = ["1", "2", "3", "5", (8)]
 try:
     strin = ''.join(list_to_convert)
 except TypeError as e:
-    print(f"Somethin went wrong. Error: {e}")
+    print(f"Something went wrong. Error: {e}")
 finally:
     list_to_convert.pop()
 
 try:
     strin = ''.join(list_to_convert)
 except TypeError as e:
-    print(f"Somethin went wrong. Error: {e}")
+    print(f"Something went wrong. Error: {e}")
 finally:
     list_to_convert.pop()
+
+# Errors should never pass silently, unless explicity silenced.
+# A function's exceptions form part of its API, they should be 
+# documented properly.
+# Prefer to use built-in exception types when possible.
