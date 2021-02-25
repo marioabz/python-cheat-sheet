@@ -92,6 +92,11 @@ def get_common_names(*args, **kwargs):
 # sort, and filter.
 get_repetitions_of_letter_a = lambda x: x.count("a")
 
+# Extended actual argument syntax.
+def print_and_group_arguments(a, b, *c):
+    print(a, b)
+    print(c)
+
 
 list_of_a = tuple(map(lambda x: x+"a", ("1", "2", "3", "4", "5")))
 print_delimeter()
@@ -131,3 +136,5 @@ print(get_common_names("chuy", first_person="mario", second_person="yoel"))
 
 print("aaaaa", get_repetitions_of_letter_a("aaaaa"))
 print(list_of_a)
+
+print_and_group_arguments(*[9, 8, 1, 1, 1, 1])
