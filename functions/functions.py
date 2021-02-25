@@ -87,7 +87,13 @@ def check_config(**kwargs):
 def get_common_names(*args, **kwargs):
     return [arg for arg in args] + [kwarg for kwarg in kwargs.values()]
 
+# The reserved word lambda allows to create anonymous functions.
+# Lambda functions tend to be used with other functions like map,
+# sort, and filter.
+get_repetitions_of_letter_a = lambda x: x.count("a")
 
+
+list_of_a = tuple(map(lambda x: x+"a", ("1", "2", "3", "4", "5")))
 print_delimeter()
 weekdays1 = get_week_days()
 z = 8
@@ -122,3 +128,6 @@ check_config(port=8000, status="alive", rate_limit=500)
 print(get_common_names("fabian", "isaac", "hugo", 
 first_person="mario", second_person="yoel"))
 print(get_common_names("chuy", first_person="mario", second_person="yoel"))
+
+print("aaaaa", get_repetitions_of_letter_a("aaaaa"))
+print(list_of_a)
