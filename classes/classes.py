@@ -87,6 +87,24 @@ class Cube(Square):
         return self.length **3
 
 
+class Person(object):
+
+    def __init__(self, name, surname, age, height):
+        self.name = name
+        self.surname = surname
+        self.age = age
+        self.height = height
+
+    def __call__(self, delimeter):
+        length = 65
+        print(length * delimeter)
+        print(self.__dict__)
+        print(length * delimeter)
+
+    def __len__(self):
+        return int(float(self.height[:-1])*100)
+
+
 a = Square(5)
 print(a.get_area(), a.get_perimeter())
 
@@ -94,3 +112,7 @@ print_country_population(India())
 print_country_population(Mexico())
 
 print(Cube(5).get_superficial_area(), Cube(3).get_volume())
+
+mario = Person(name="Mario", surname="Briseño", age=25, height="1.76m")
+mario("*")
+print(len(mario), "centimeters of height")
