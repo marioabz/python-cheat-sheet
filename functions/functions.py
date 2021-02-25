@@ -2,6 +2,7 @@
 import decimal
 from collections.abc import Callable
 
+# LEGB rule: local, enclosing, global and built-in; rule for name lookup
 # A normal function with the arguments with type specified. One can also
 # omit the type specification and the function would work the same
 # way:
@@ -38,6 +39,7 @@ def add_five_to_number(number=0) -> int:
     number += 5
     return number
 
+
 # Do not do this.           |
 #                           V    
 def get_initialized_list(arg=[]):
@@ -66,6 +68,7 @@ def function_modifier(func: Callable) -> Callable:
 def check_g7_countries(country: str) -> bool:
     countries = ("USA", "DE", "UK", "FR", "JP", "CA", "IL")
     return country in countries
+
 
 # Single asterisk before a variable allows the function to capture
 # any number of unnamed arguments as a tuple.
@@ -96,6 +99,17 @@ get_repetitions_of_letter_a = lambda x: x.count("a")
 def print_and_group_arguments(a, b, *c):
     print(a, b)
     print(c)
+
+
+# Closures
+# A nested function that has access toa free variagble from an 
+# enclosing function that has finished its execution.
+def enclosure():
+    a = 10 # <- variable to be remembered
+    c = "hola"
+    def local_func(b):
+        return a + b, c+"1"
+    return local_func
 
 
 list_of_a = tuple(map(lambda x: x+"a", ("1", "2", "3", "4", "5")))
@@ -138,3 +152,6 @@ print("aaaaa", get_repetitions_of_letter_a("aaaaa"))
 print(list_of_a)
 
 print_and_group_arguments(*[9, 8, 1, 1, 1, 1])
+
+lf = enclosure()
+print(lf(7), lf.__closure__)
