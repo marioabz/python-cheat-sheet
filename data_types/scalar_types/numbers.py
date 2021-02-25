@@ -27,5 +27,3 @@ import decimal
 a = 1.1 + 2.2
 print(a) # -> 3.3000000000000003
 print(decimal.Decimal("1.1") + decimal.Decimal("2.2")) # -> 3.3
-
-

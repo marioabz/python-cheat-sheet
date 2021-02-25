@@ -32,7 +32,8 @@ print(person.items())
 # ('country_of_origin', 'China')])
 
 # Returns a list of keys of a dict
-print(person.keys()) # -> dict_keys(['age', 'name', 'last_name', 'ocupation', 'country_of_origin'])
+print(person.keys()) # -> dict_keys(['age', 'name', 'last_name', 
+                     #    'ocupation', 'country_of_origin'])
 
 # Returns a list of values of a dict
 print(person.values()) # -> dict_values([67, 'Jinpig', 'Xi', 'President', 'China'])
