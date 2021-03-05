@@ -64,6 +64,22 @@ def function_modifier(func: Callable) -> Callable:
     return wrapper
 
 
+class CubicPolynomial(object):
+
+    def __init__(self, f):
+        self.f = f
+
+    def __call__(self, *args, **kwargs):
+        def wrapper(*args, **kwargs):
+            last_coefficient = args[-1]
+            return f"{last_coefficient}x^3 + " + self.f(*args[:-1], **kwargs)
+        return wrapper(*args, **kwargs)
+
+@CubicPolynomial
+def quadratic_polynomial(*args):
+    return f"{args[-1]}x^2 + {args[-2]}x + {args[-3]}"
+
+
 @function_modifier
 def check_g7_countries(country: str) -> bool:
     countries = ("USA", "DE", "UK", "FR", "JP", "CA", "IL")
@@ -130,6 +146,7 @@ enclosing()
 print(f"Global building_height is: {building_height}")
 print_delimeter()
 
+
 # 'nonlocal' keyword introduces names from enclosing namespace into the
 # local namespace.
 building_height = 100
@@ -190,3 +207,6 @@ print_and_group_arguments(*[9, 8, 1, 1, 1, 1])
 
 lf = enclosure()
 print(lf(7), lf.__closure__)
+
+print_delimeter()
+print(quadratic_polynomial(8, 9, 7, 5))
