@@ -15,7 +15,7 @@ def print_message_with_delimeters(message: str, delimeter: str):
 
 
 def print_delimeter():
-    print("-" * 25)
+    print("-" * 40)
 
 
 # Function that returns a list
@@ -95,6 +95,7 @@ def get_common_names(*args, **kwargs):
 # sort, and filter.
 get_repetitions_of_letter_a = lambda x: x.count("a")
 
+
 # Extended actual argument syntax.
 def print_and_group_arguments(a, b, *c):
     print(a, b)
@@ -110,6 +111,40 @@ def enclosure():
     def local_func(b):
         return a + b, c+"1"
     return local_func
+
+
+# 'global' keyword introduces names from global namespace into the
+# local namespace.
+building_height = 100
+def enclosing():
+    building_height = 89
+    def local_function():
+        global building_height
+        building_height = 50
+    print(f"Building height is: {building_height}")
+    local_function()
+    print(f"Building height is: {building_height}")
+
+print(f"Global building_height is: {building_height}")
+enclosing()
+print(f"Global building_height is: {building_height}")
+print_delimeter()
+
+# 'nonlocal' keyword introduces names from enclosing namespace into the
+# local namespace.
+building_height = 100
+def enclosing():
+    building_height = 89
+    def local_function():
+        nonlocal building_height
+        building_height = 50
+    print(f"Building height is: {building_height}")
+    local_function()
+    print(f"Building height is: {building_height}")
+
+print(f"Global building_height is: {building_height}")
+enclosing()
+print(f"Global building_height is: {building_height}")
 
 
 list_of_a = tuple(map(lambda x: x+"a", ("1", "2", "3", "4", "5")))
