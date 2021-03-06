@@ -105,6 +105,30 @@ class Person(object):
         return int(float(self.height[:-1])*100)
 
 
+# The 'property' decorator allows to set attributes,
+# setters, getters, and deleters in a pythonic way
+class Server(object):
+
+    def __init__(self, ip, port):
+        self._ip = ip
+        self._port = port
+
+    @property
+    def ip(self):
+        print("Querying ip...")
+        return self._ip
+
+    @property
+    def port(self):
+        print("Querying port...")
+        return self._port
+    
+    @port.setter
+    def port(self, port):
+        print("Setting port")
+        self._port = port
+
+
 a = Square(5)
 print(a.get_area(), a.get_perimeter())
 
@@ -116,3 +140,8 @@ print(Cube(5).get_superficial_area(), Cube(3).get_volume())
 mario = Person(name="Mario", surname="Briseño", age=25, height="1.76m")
 mario("*")
 print(len(mario), "centimeters of height")
+
+server = Server("localhost", 8080)
+print(server.port, server.ip)
+server.port = 5000
+print(server.port)
