@@ -164,6 +164,27 @@ enclosing()
 print(f"Global building_height is: {building_height}")
 
 
+# 'check_non_negative' is not a decorator. It is a normal function 
+# than return a function that works as a decorator
+def check_non_negative(index):
+    def validator(f):
+        def wrap(*args):
+            if args[index] < 0:
+                raise ValueError(
+                    f"Argument {index} must be non-negative"
+                )
+            return f(*args)
+        return wrap
+    return validator
+
+
+# returns 'validator' wich takes 'create_list' as an argument 
+# and decorates it.
+@check_non_negative(1)
+def create_list(value, size):
+    return [value] * size
+
+
 list_of_a = tuple(map(lambda x: x+"a", ("1", "2", "3", "4", "5")))
 print_delimeter()
 weekdays1 = get_week_days()
@@ -210,3 +231,6 @@ print(lf(7), lf.__closure__)
 
 print_delimeter()
 print(quadratic_polynomial(8, 9, 7, 5))
+
+print_delimeter()
+print(create_list(8, 8))
