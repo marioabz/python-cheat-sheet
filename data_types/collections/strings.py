@@ -10,8 +10,15 @@ tickets = "1 2 3 4 5 6"
 country = "mexico".capitalize()
 print(country) # -> "Mexico"
 
+# The built-in function converts an integer Unicode codepoint to a 
+# single character string.
 greetings = chr(104) + chr(105) + "!"
 print(greetings) # -> hi!
+
+# The built-in function converts a single character to its integer
+# Unicode codepoint.
+
+print(ord("A"), ord("a"))
 
 message = "hi/"
 print(message*8, len(message)) # -> hi/hi/hi/hi/hi/hi/hi/hi/ 3
@@ -47,6 +54,8 @@ class Truck(object):
         return f"Truck(width={self.width}, length={self.length})"
 minivan = Truck(2, 9)
 
+truck_collections = [Truck(5,i) for i in range(6, 11)]
+
 # repr() is for developers
 # The result of repr() should generally contain more information
 # than the result of str()
@@ -77,3 +86,6 @@ clean_name = noisy_name.strip("12a0")
 # has a default behavior.
 print(minivan)
 print(get_sum.__repr__)
+
+# repr() is used when showing elements of a collection
+print(truck_collections) # -> [[Truck(width=5, length=6), Truck(width=5, length=7) ...]
