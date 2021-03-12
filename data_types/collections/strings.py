@@ -71,5 +71,9 @@ name, _, surname = "Mario-Briseño".partition("-")
 noisy_name = "12aMario Briseño00"
 clean_name = noisy_name.strip("12a0")
 
-print(minivan.__repr__())
+# If a class rewrites __repr__ but not __str__, print() will
+# use __repr__ instead. But this doesn't happen backwards, 
+# __repr__ won't use __str__ as default it not defined. __repr__
+# has a default behavior.
+print(minivan)
 print(get_sum.__repr__)
