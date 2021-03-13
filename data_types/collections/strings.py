@@ -20,6 +20,10 @@ print(greetings) # -> hi!
 
 print(ord("A"), ord("a"))
 
+# ascii() replaces non-ASCII characters with escape sequences.
+ascii_string = "H¶llo"
+print(ascii(ascii_string))
+
 message = "hi/"
 print(message*8, len(message)) # -> hi/hi/hi/hi/hi/hi/hi/hi/ 3
 
