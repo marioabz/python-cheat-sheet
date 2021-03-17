@@ -67,3 +67,16 @@ print(Decimal(-7) // Decimal(3) == (-7) // 3)
 result1 = (-7) // 3 # -> -3
 result2 = Decimal("-7") // Decimal("3") # -> -2
 
+from fractions import Fraction
+
+# The built-in fractions module allows fraction representations
+# through 
+first_fraction = Fraction(5, 2)
+second_fraction = Fraction("3/8")
+third_fraction = Fraction(0.1)
+fourth_fraction = Fraction(Decimal("0.1"))
+
+print(first_fraction, second_fraction, third_fraction, fourth_fraction)
+print(first_fraction * fourth_fraction)
+
+
