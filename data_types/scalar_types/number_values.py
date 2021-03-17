@@ -60,3 +60,10 @@ print(Decimal("1.1") + Decimal("2.2")) # -> 3.3
 # Operations are implemented in different ways across data types.
 print(Decimal(-7) % Decimal(3) == (-7) // 3)
 print(Decimal(-7) // Decimal(3) == (-7) // 3)
+
+# The // operator is known in Python as the floor division operator
+# however in the decimal data type this same operator truncates
+# towards 0.
+result1 = (-7) // 3 # -> -3
+result2 = Decimal("-7") // Decimal("3") # -> -2
+
