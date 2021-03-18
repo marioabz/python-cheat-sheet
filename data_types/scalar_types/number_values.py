@@ -8,7 +8,6 @@ x = y = z = 5 # Not ilegal
 celsius_degrees = -51
 topics = int("941")
 
-
 height = float(1.75)
 
 # float() is a double precision (64-bit) data type.
@@ -79,4 +78,11 @@ fourth_fraction = Fraction(Decimal("0.1"))
 print(first_fraction, second_fraction, third_fraction, fourth_fraction)
 print(first_fraction * fourth_fraction)
 
+# Complex
+# Python ujses the electrical engineering notation for imaginary
+# numbers.
+complex_number = 3 + 4j
+other_complex_number = complex('5j')
+another_complex_number = complex(8, -5)
 
+print(other_complex_number * complex_number, another_complex_number)
