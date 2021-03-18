@@ -106,3 +106,18 @@ rectangular_coordinates = cmath.rect(same_phase, same_absolute_value)
 print(f"Phase is: {phase}, magnitude of vector: {absolute_value}")
 print(same_phase, same_absolute_value)
 print(rectangular_coordinates)
+
+pi = 3.14159
+
+print(f"Pi is: {round(pi)}")
+print(f"Pi is: {round(pi, 4)}")
+print(f"Pi is: {round(Decimal(pi), 3)}")
+print(f"Pi is: {round(Fraction(5, 7), 1)}")
+
+# Number base conversions
+_bin = bin(4)
+_oct = oct(9)
+_hex = hex(255)
+_int = int("9", 10)
+
+print(_bin, _oct, _hex, _int)
