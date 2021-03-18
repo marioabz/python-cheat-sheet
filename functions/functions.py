@@ -119,7 +119,7 @@ def print_and_group_arguments(a, b, *c):
 
 
 # Closures
-# A nested function that has access toa free variagble from an 
+# A nested function that has access to a free variable from an 
 # enclosing function that has finished its execution.
 def enclosure():
     a = 10 # <- variable to be remembered

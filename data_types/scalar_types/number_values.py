@@ -30,7 +30,7 @@ print(a) # -> 200.0
 # The library 'Decimal' could help here
 # 'decimal' allows more precise control of decimals, critical
 # in some applications
-# decimal has ocnfigurable (although finite) precision
+# decimal has configurable (although finite) precision
 # default to 28 digits of decimal precision.
 from decimal import (
     Decimal,
@@ -142,6 +142,7 @@ print(f"Date is: {today}", _today.day, today.weekday(), today.isoweekday(),
 
 # Hour, minute and second of todays time
 print(f"Hour is: {todays_time.hour}, Minute: {todays_time.minute}, Second: {todays_time.second}")
+
 # Not portable since this functionality
 formated_date = today.strftime("%A %d %B %Y")
 print(formated_date, f", ISO Format: {todays_time.isoformat()}")

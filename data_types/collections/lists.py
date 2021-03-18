@@ -17,6 +17,7 @@ tickets.clear()
 # Copy values of list
 tickets = [1, 2, 3, 4, 5]
 not_the_same_tickets = tickets.copy()
+
 # 'tickets' and 'not_the_same_tickets' are equal in value, but
 # they are pointing to different objects
 print(not_the_same_tickets == tickets, not_the_same_tickets is tickets)
@@ -32,6 +33,7 @@ print(list(range(0, 10, 2)).index(8)) # -> 4
 print([0, 1, 2] + [3, 4, 5]) # -> [0, 1, 2, 3 ,4, 5]
 
 numbers = [0, 0, 0, 0]
+
 # Insertion at a specific index
 numbers.insert(0, 1)
 print(numbers) # -> [1, 0, 0, 0, 0]
@@ -58,4 +60,3 @@ the_list = [0, 0, 1, 2, 3]
 # Removes the first ocurrance of a value
 the_list.remove(0)
 print(the_list) # -> [0, 1, 2, 3]
-

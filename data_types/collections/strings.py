@@ -15,7 +15,7 @@ print(country) # -> "Mexico"
 greetings = chr(104) + chr(105) + "!"
 print(greetings) # -> hi!
 
-# The built-in function converts a single character to its integer
+# The built-in function ord() converts a single character to its integer
 # Unicode codepoint.
 
 print(ord("A"), ord("a"))
