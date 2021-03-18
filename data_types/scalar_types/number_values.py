@@ -118,6 +118,6 @@ print(f"Pi is: {round(Fraction(5, 7), 1)}")
 _bin = bin(4)
 _oct = oct(9)
 _hex = hex(255)
-_int = int("9", 10)
+_int = int("abc", 16)
 
 print(_bin, _oct, _hex, _int)
