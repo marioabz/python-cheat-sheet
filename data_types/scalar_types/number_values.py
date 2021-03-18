@@ -85,4 +85,24 @@ complex_number = 3 + 4j
 other_complex_number = complex('5j')
 another_complex_number = complex(8, -5)
 
-print(other_complex_number * complex_number, another_complex_number)
+conjugate = complex_number.conjugate() # -> 3-4j
+
+print(other_complex_number * complex_number, another_complex_number) # -> (-20+15j) (8-5j)
+
+# Printing real and imaginary parts of complex number
+print(complex_number.real, complex_number.imag) # -> 3.0, 4.0
+
+import cmath
+
+phase = cmath.phase(complex_number)
+absolute_value = abs(complex_number)
+
+# From rectangular coordinates to polar coordinates
+same_phase, same_absolute_value = cmath.polar(complex_number)
+
+# From polar coordinates to rectangular coordinates
+rectangular_coordinates = cmath.rect(same_phase, same_absolute_value)
+
+print(f"Phase is: {phase}, magnitude of vector: {absolute_value}")
+print(same_phase, same_absolute_value)
+print(rectangular_coordinates)
