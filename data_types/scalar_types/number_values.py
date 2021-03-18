@@ -128,6 +128,10 @@ print(_bin, _oct, _hex, _int)
 # datetime data is composite of date and time
 import datetime
 
+#            |
+# Avoid this v
+# from datetime import datetime
+
 today = datetime.date(2020, 3, 17)
 _today = datetime.date.today()
 date_from_timestamp = datetime.date.fromtimestamp(1560000000)
@@ -140,4 +144,4 @@ print(f"Date is: {today}", _today.day, today.weekday(), today.isoweekday(),
 print(f"Hour is: {todays_time.hour}, Minute: {todays_time.minute}, Second: {todays_time.second}")
 # Not portable since this functionality
 formated_date = today.strftime("%A %d %B %Y")
-print(formated_date)
+print(formated_date, f", ISO Format: {todays_time.isoformat()}")
