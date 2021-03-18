@@ -121,3 +121,23 @@ _hex = hex(255)
 _int = int("abc", 16)
 
 print(_bin, _oct, _hex, _int)
+
+# The built-in module provides a datetime data type to represent
+# dates in the form of Gregorian calendar dates.
+
+# datetime data is composite of date and time
+import datetime
+
+today = datetime.date(2020, 3, 17)
+_today = datetime.date.today()
+date_from_timestamp = datetime.date.fromtimestamp(1560000000)
+todays_time = datetime.time(22, 16, 55, 548623)
+
+print(f"Date is: {today}", _today.day, today.weekday(), today.isoweekday(), 
+    date_from_timestamp)
+
+# Hour, minute and second of todays time
+print(f"Hour is: {todays_time.hour}, Minute: {todays_time.minute}, Second: {todays_time.second}")
+# Not portable since this functionality
+formated_date = today.strftime("%A %d %B %Y")
+print(formated_date)
