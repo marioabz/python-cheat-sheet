@@ -1,0 +1,7 @@
+
+Organizing Larger Programs
+
+    * Namespace packages,
+    * __main__.py,
+    * test/ directory should be at the same level as the packages that the package
+    is built with.
