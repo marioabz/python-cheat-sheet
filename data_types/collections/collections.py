@@ -14,3 +14,10 @@ print(list_of_lists)
 ages = [24, 25, 26, 50, 21, 63, 78, 41, 89]
 young_people = map(lambda x: 20 <= x <= 30, ages)
 print(list(young_people))
+
+# map() can also have multiple input sequences
+# sequences have to have the same length among them
+girls = [chr(i) for i in range(97, 102)]
+boys = [chr(i) for i in range(102, 107)]
+pairs = list(map(lambda x,y: f"{x}+{y}", girls, boys))
+print(pairs)
