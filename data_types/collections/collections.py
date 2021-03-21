@@ -21,3 +21,9 @@ girls = [chr(i) for i in range(97, 102)]
 boys = [chr(i) for i in range(102, 107)]
 pairs = list(map(lambda x,y: f"{x}+{y}", girls, boys))
 print(pairs)
+
+# filter() applies a function to each element in a sequence,
+# constructing a new sequence with the elements for which the
+# function returns True
+young_people = filter(lambda x: 20 <= x <= 30, ages)
+print(list(young_people))
