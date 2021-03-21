@@ -27,3 +27,16 @@ print(pairs)
 # function returns True
 young_people = filter(lambda x: 20 <= x <= 30, ages)
 print(list(young_people))
+
+# reduce() repeatedly applies a function to the  elements of
+# a sequence, reducing themto a single variable
+from functools import reduce
+import operator
+
+def mul(x, y):
+    print(f"Log of values: x={x}, y={y}")
+    return x * y
+
+result = reduce(operator.mul, range(1,10))
+same_result = reduce(mul, range(1, 10))
+print(result, same_result)
